@@ -1,0 +1,5 @@
+carei_resources.page:
+  title: 'Resources'
+  parent: main
+  route_name: carei_resources.page
+  menu_name: main

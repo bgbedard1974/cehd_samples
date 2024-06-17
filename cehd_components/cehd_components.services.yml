@@ -1,0 +1,9 @@
+services:
+  cehd_components.rss_feed_service:
+    class: Drupal\cehd_components\Service\RssFeedService
+  cehd_components.taxonomy_service:
+    class: Drupal\cehd_components\Service\TaxonomyService
+  cehd_components.node_service:
+    class: Drupal\cehd_components\Service\NodeService
+  cehd_components.file_service:
+    class: Drupal\cehd_components\Service\FileService

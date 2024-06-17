@@ -1,0 +1,7 @@
+name: 'CAREI Resources Page'
+type: module
+description: 'Creates the Resources Page.'
+core_version_requirement: ^9.4 || ^10
+package: 'Custom'
+dependencies:
+  - cehd_components

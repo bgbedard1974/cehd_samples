@@ -1,0 +1,34 @@
+groups:
+  content-area:
+    xml: https://research.cehd.umn.edu/carei/content-area-feed/
+    name: Content Area
+    categories:
+      - Arts
+      - Culture, Diversity, & Equity
+      - Literacy
+      - Math
+      - Science
+      - Social Studies
+      - World Language
+  education-setting:
+    xml: https://research.cehd.umn.edu/carei/education-setting-feed/
+    name: Education Setting
+    categories:
+      - Elementary
+      - Middle Years
+      - Out of School Time
+      - Post-Secondary
+      - Secondary
+  policy-area:
+    xml: https://research.cehd.umn.edu/carei/policy-area-feed/
+    name: Policy Area
+    categories:
+      - Assessment, Standards, & Accountability
+      - Career & College Readiness
+      - Communities
+      - Curriculum and Instruction
+      - Leadership
+      - Professional Development
+      - School Day Structure
+      - Social & Emotional Development
+      - Student Health

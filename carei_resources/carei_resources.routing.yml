@@ -1,0 +1,15 @@
+carei_resources.test:
+  path: '/resources-test'
+  defaults:
+    _controller: '\Drupal\carei_resources\Controller\TestController::view'
+    _title: 'Test'
+  requirements:
+    _role: 'authenticated'
+carei_resources.page:
+  path: '/resources/{group_id}'
+  defaults:
+    _controller: '\Drupal\carei_resources\Controller\PageController::view'
+    _title: 'Resources'
+    group_id: 'content-area'
+  requirements:
+    _permission: 'access content'

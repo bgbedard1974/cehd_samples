@@ -1,0 +1,39 @@
+<?php
+
+use Drupal\Node\NodeInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Access\AccessResult;
+
+/**
+ * Implements hook_node_access()
+ * This function is called whenever a user is trying to access a Drupal Node.
+ *
+ * @param \Drupal\Node\NodeInterface $node
+ * @param string $op
+ * @param \Drupal\Core\Session\AccountInterface $account
+ *
+ * @return AccessResult
+ */
+function cehd_components_node_access(NodeInterface $node, string $op, AccountInterface $account): AccessResult {
+
+  /**
+   * Determines if a node is being accessed via the 'node/{id}' pattern.
+   * If it is, then access is denied.
+   */
+  $config = \Drupal::config('cehd_components.config');
+  if ($config->get('node_access') == 'enabled') {
+
+    $current_path = \Drupal::request()->getpathInfo();
+    $path_args = explode('/', $current_path);
+
+    $arg_1 = array_key_exists(1, $path_args) ? $path_args[1] : '';
+    $arg_2 = array_key_exists(2, $path_args) ? $path_args[2] : 0;
+
+    if ($op == 'view' && $arg_1 == 'node' && $arg_2 === $node->id()) {
+      return AccessResult::forbidden();
+    }
+  }
+
+  // Return a default value
+  return AccessResult::neutral();
+}

@@ -1,0 +1,57 @@
+{# carei_resources/templates/group-accordion-view.html.twig #}
+
+<!-- BEGIN 'group-accordion-view.html.twig' -->
+
+<p>
+{% for menu_item in menu %}
+  <a href="{{ menu_item.url }}">{{ menu_item.text }}</a>
+  {% if not loop.last %}
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+  {% endif %}
+{% endfor %}
+  &nbsp;&nbsp;|&nbsp;&nbsp;<a href="/research-summaries">Research Summaries</a>
+</p>
+
+{% if before %}
+  {{ before | raw }}
+{% endif %}
+
+{% if group %}
+
+<h3>{{ group.name }}</h3>
+
+<p class="accordion-expand-holder"><a class="accordion-expand-all" tabindex="0" href="#">Expand all</a></p>
+<div class="accordion">
+  <div class="paragraph--type--folwell-accordion">
+    <div class="field--name-field-fa-accordion-items">
+
+      {% for category in group.items %}
+        <!-- BEGIN Item Group -->
+        <h3 tabindex="0"><span class="arrow">+</span> {{ category.name }}</h3>
+        <div class="interior">
+          {% for resource in category.items %}
+            <!-- BEGIN Item -->
+            <div class="carei-resource-item">
+              <p><strong><a href="{{ resource.url }}">{{ resource.title }}</a></strong></p>
+              {{ resource.description | raw }}
+            </div>
+            {% if not loop.last %}
+              <hr /> <!-- ??? Maybe hide this on last item. -->
+            {% endif %}
+            <!-- END Item -->
+          {% endfor %}
+        </div>
+        <!-- END Item Group -->
+      {% endfor %}
+
+    </div>
+  </div>
+</div>
+
+{% endif %}
+
+{% if after %}
+  {{ after | raw }}
+{% endif %}
+
+<!-- END 'group-accordion-view.html.twig' -->

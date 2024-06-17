@@ -1,0 +1,5 @@
+name: 'CEHD Components'
+type: module
+description: 'Provides a set of components for CEHD related sites.'
+core_version_requirement: ^9.4 || ^10
+package: 'Custom'

@@ -1,0 +1,5 @@
+cehd_components.config:
+  title: 'CEHD Components'
+  description: 'Configure CEHD Components.'
+  route_name: cehd_components.config
+  parent: system.admin_config

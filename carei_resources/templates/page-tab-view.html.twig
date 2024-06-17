@@ -1,0 +1,54 @@
+{# carei_resources/templates/page-tab-view.html.twig #}
+
+<!-- BEGIN 'page-tab-view.html.twig' -->
+
+<div class="a11y-paragraphs-tabs__wrapper">
+  <div class="a11y-paragraphs-tabs__section-title">
+    <div>{{ page_data.section_title }}</div>
+  </div>
+  <div class="a11y-paragraphs-tabs__section-container">
+    <div class="accordion-tabs js-tabs">
+      <ul role="tablist" class="tabs-tab-list">
+
+        {% for group in page_data.groups %}
+          {% set tab_index = loop.index %}
+          <!-- BEGIN Tab Header -->
+          <li role="presentation">
+            <a href="#section-{{ tab_index }}" role="tab" id="tab-{{ tab_index }}" aria-controls="section-{{ tab_index }}" aria-selected="true" class="tabs-trigger js-tabs-trigger">{{ group.header }}</a>
+          </li>
+          <!-- END Tab Header -->
+        {% endfor %}
+
+      </ul>
+      <div> <!-- Content Wrapper -->
+
+        {% for group in page_data.groups %}
+          {% set tab_index = loop.index %}
+          <!-- BEGIN Tab Content -->
+          <section id="section-{{ tab_index }}" role="tabpanel" aria-labelledby="tab-{{ tab_index }}" class="tabs-panel js-tabs-panel" tabindex="0">
+            <div class="accordeon-trigger js-accordeon-trigger" aria-controls="section-{{ tab_index }}" aria-expanded="true" tabindex="0">
+              {{ tab }}
+            </div>
+            <div class="content" aria-hidden="false">
+              {% include 'accordion-view.html.twig' with {'group': group} %}
+            </div>
+          </section>
+          <!-- END Tab Content -->
+        {% endfor %}
+
+      </div> <!-- Content Wrapper -->
+    </div> <!-- div-accordion-tabs -->
+  </div> <!-- div-section-container -->
+</div> <!-- div-wrapper -->
+
+<!-- END 'page-tab-view.html.twig' -->
+
+
+
+
+
+
+
+
+
+

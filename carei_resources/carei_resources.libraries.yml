@@ -1,0 +1,27 @@
+carei_folwell_accordion:
+  version: 1
+  css:
+    component:
+      "/modules/custom/folwell_components/assets/css/accordion.css": {}
+      "/modules/custom/folwell_components/assets/css/tabs.css": {}
+      "/modules/contrib/a11y_paragraphs_tabs/css/a11y-paragraphs-tabs.css": {}
+  js:
+    /modules/custom/folwell_components/assets/js/accordion.js: {}
+    /libraries/a11y-accordion-tabs/a11y-accordion-tabs.js: {}
+    /modules/contrib/a11y_paragraphs_tabs/js/a11y-paragraphs-tabs.js: {}
+  dependencies:
+    - core/jquery.ui.accordion
+
+carei_folwell_accordion_d9:
+  version: 1
+  css:
+    component:
+      "/modules/custom/folwell_components/assets/css/accordion.css": {}
+      "/modules/custom/folwell_components/assets/css/tabs.css": {}
+      "/modules/contrib/a11y_paragraphs_tabs/css/a11y-paragraphs-tabs.css": {}
+  js:
+    /modules/custom/folwell_components/assets/js/accordion.js: {}
+    /libraries/a11y-accordion-tabs/a11y-accordion-tabs.js: {}
+    /modules/contrib/a11y_paragraphs_tabs/js/a11y-paragraphs-tabs.js: {}
+  dependencies:
+    - jquery_ui_accordion/accordion

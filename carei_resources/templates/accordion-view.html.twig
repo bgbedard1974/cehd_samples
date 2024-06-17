@@ -1,0 +1,32 @@
+{# carei_resources/templates/accordion-view.html.twig #}
+
+<!-- BEGIN 'accordion-view.html.twig' -->
+<!-- <h3>{{ group.header }}</h3> -->
+<p class="accordion-expand-holder"><a class="accordion-expand-all" tabindex="0" href="#">Expand all</a></p>
+<div class="accordion">
+  <div class="paragraph--type--folwell-accordion">
+    <div class="field--name-field-fa-accordion-items">
+
+      {% for category in group.items %}
+        <!-- BEGIN Item Group -->
+        <h3 tabindex="0"><span class="arrow">+</span> {{ category.header }}</h3>
+        <div class="interior">
+          {% for resource in category.items %}
+            <!-- BEGIN Item -->
+            <div class="carei-resource-item">
+              <p><strong><a href="{{ resource.url }}">{{ resource.title }}</a></strong></p>
+              {{ resource.body | raw }}
+            </div>
+            {% if not loop.last %}
+              <hr /> <!-- ??? Maybe hide this on last item. -->
+            {% endif %}
+            <!-- END Item -->
+          {% endfor %}
+        </div>
+        <!-- END Item Group -->
+      {% endfor %}
+
+     </div>
+  </div>
+</div>
+<!-- END 'accordion-view.html.twig' -->

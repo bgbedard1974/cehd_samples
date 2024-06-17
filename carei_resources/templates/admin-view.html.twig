@@ -1,0 +1,39 @@
+{# carei_resources/templates/people-admin-view.html.twig #}
+
+<p><strong>Content Check</strong></p>
+
+<ul>
+  <li>Found <strong>{{ term_count }}</strong> Terms.</li>
+  <li>Found <strong>{{ node_count }}</strong> Nodes.</li>
+</ul>
+
+<p><strong>Import Status</strong></p>
+
+<ul>
+  <li>Import Flag: <strong>{{ import_flag }}</strong></li>
+  <li>Run Mode: <strong>{{ run_mode }}</strong></li>
+</ul>
+
+<p><strong>Before importing:</strong></p>
+
+<ol>
+  {% if vocab_check %}
+    <li>Create '{{ vocab_name }}' Vocabulary. <strong>Done.</strong></li>
+  {% else %}
+    <li>Create '{{ vocab_name }}' Vocabulary.</li>
+  {% endif %}
+
+  {% if content_check %}
+    <li>Create '{{ content_name }}' Content Type. <strong>Done.</strong></li>
+  {% else %}
+    <li>Create '{{ content_name }}' Content Type.</li>
+  {% endif %}
+</ol>
+
+<p>Click on the following links to import the categories and content.</p>
+
+<ul>
+  <li><a href="{{ import_terms_link }}">Import Terms</a></li>
+  <li><a href="{{ import_content_link }}">Import Content</a></li>
+</ul>
+

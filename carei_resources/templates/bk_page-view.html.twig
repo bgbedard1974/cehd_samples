@@ -1,0 +1,24 @@
+{# carei_resources/templates/bk_page-view.html.twig #}
+
+{% if page_data.message %}
+<p>{{ page_data.message }}</p>
+{% endif %}
+
+{% for parent_group in page_data.parent_groups %}
+
+  <h4 class="carei_group_header">{{ parent_group.name }}</h4>
+
+  <div class="carei_accordion_group">
+    {% for group in parent_group.groups %}
+      <div class="carei_accordion_item">
+        <div class="carei_accordion">{{ group.name }}</div>
+        <div class="carei_panel">
+          {% for resource in group.resources %}
+            <h4><a href="{{ resource.url }}">{{ resource.title }}</a></h4>
+            <div class="carei_resource">{{ resource.body | raw }}</div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endfor %}

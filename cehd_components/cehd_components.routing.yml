@@ -1,0 +1,7 @@
+cehd_components.config:
+  path: '/admin/config/cehd-components/config'
+  defaults:
+    _form: '\Drupal\cehd_components\Form\ConfigForm'
+    _title: 'CEHD Components Configuration'
+  requirements:
+    _role: 'administrator'

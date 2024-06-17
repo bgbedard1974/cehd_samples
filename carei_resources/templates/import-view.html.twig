@@ -1,0 +1,7 @@
+{# carei_resources/templates/import-view.html.twig #}
+
+{% if import_flag  %}
+  <p>Created <strong>{{ entity_count }}</strong> {{ entity_name }}s.</p>
+{% else %}
+  <p>Import functions have been disabled.</p>
+{% endif %}
